@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory, Redirect } from 'react-router';
 
 import routes from '../static/src/Routes.jsx';
 import ContextWrapper from '../static/src/ContextWrapper.jsx';
@@ -9,6 +9,7 @@ import ContextWrapper from '../static/src/ContextWrapper.jsx';
 const WrappedApp = (props) =>(
   <ContextWrapper {...props}>
     <Router history={browserHistory}>
+      <Redirect from="/" to="/issues" />
       {routes}
     </Router>
   </ContextWrapper>
