@@ -6,7 +6,6 @@ import IssueList from './IssueList.jsx';
 import IssueEdit from './IssueEdit.jsx';
 
 const NoMatch = () => <p>Page Not Found </p>;
-// const Home = () => <p>Home</p>;
 
 export default (
   <Route path="/" component={App}>
