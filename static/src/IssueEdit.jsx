@@ -24,7 +24,7 @@ constructor(props, context){
   // issue.completionDate = issue.completionDate != null ? new Date(issue.completionDate) : null;
 
   let issue;
-  if(context.initialState.IssueEdit){
+  if(context.initialState && context.initialState.IssueEdit){
     issue = context.initialState.IssueEdit;
     issue.created = new Date(issue.created);
     issue.completionDate = issue.completionDate != null ? new Date(issue.completionDate) : null;
@@ -34,7 +34,7 @@ constructor(props, context){
       _id : '',
       title: '',
       owner: '',
-      effort: '',
+      effort: null,
       completionDate: null,
       created: null,
     };
@@ -149,7 +149,7 @@ loadData(){
   // });
 
   IssueEdit.dataFetcher({params: this.props.params}).then(data=>{
-    const issue = data.IssueList;
+    const issue = data.IssueEdit;
     issue.created = new Date(issue.created);
     issue.completionDate =issue.completionDate != null ? new Date(issue.completionDate) : null;
     this.setState({issue});
