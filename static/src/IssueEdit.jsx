@@ -9,7 +9,7 @@ import NumInput from './NumInput.jsx';
 import DateInput from './DateInput.jsx';
 import Toast from './Toast.jsx';
 
-export default class IssueEdit extends React.Component { // eslint-disable-line
+class IssueEdit extends React.Component { // eslint-disable-line
 static dataFetcher({params, urlBase}){
   return fetch(`${urlBase ||''}/api/issues/${params.id}`).then(response=>{
     if(!response.ok) return response.json().then(error=>Promise.reject(error));
@@ -284,3 +284,5 @@ IssueEdit.contextTypes = {
 IssueEdit.PropTypes = {
   params: PropTypes.object.isRequired,
 };
+
+export default IssueEdit;
