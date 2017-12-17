@@ -220,7 +220,7 @@ dismissToast(){
           <FormGroup validationState={this.state.invalidFields.completionDate ? 'error' : null}>
             <Col componentClass={ControlLabel} sm={3}> Completion Date </Col>
             <Col sm={9}>
-              <FormControl componentClass={DateInput} name="completionDate"  value={issue.completionDate}
+              <FormControl componentClass={DateInput} name="completionDate"  value={this.state.issue.completionDate}
                 onChange={this.onChange} onValidityChange={this.onValidityChange} />
                 <FormControl.Feedback />
             </Col>
